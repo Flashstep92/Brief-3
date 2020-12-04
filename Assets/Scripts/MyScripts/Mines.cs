@@ -4,15 +4,43 @@ using UnityEngine;
 
 public class Mines : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnTriggerEnter(Collider other)
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
         
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        
+    }
+
+    /// <summary>
+    /// Activates the mine when tanks enter trigerzone
+    /// 
+    /// </summary>
+    public void ActivateMineOnTrigger()
+    {
+       // mine should shoot up and deal damage.
+    }
+
+
+    /// <summary>
+    /// handles the amount of damage 
+    /// </summary>
+    /// <param name="amountOfDamage"></param>
+    /// <returns></returns>
+    public float DealMineDamage(float amountOfDamage)
+    {
+        return amountOfDamage;
+    }
+
+
+
+
 }

@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class TankCollisions : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision other)
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionExit(Collision other)
     {
         
     }
+
+    private void OnCollisionStay(Collision other)
+    {
+        
+    }
+
+    /// <summary>
+    /// checks to see if a collision has occured 
+    /// </summary>
+    public void CheckCollision()
+    {
+
+    }
+
+    
+
 }
