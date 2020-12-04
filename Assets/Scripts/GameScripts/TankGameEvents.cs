@@ -7,7 +7,7 @@ public static class TankGameEvents
     public delegate void OnObjectDestroyed(Transform TankDestroyed);
     public delegate void ObjectTakeDamage(Transform ObjectDamaged, float amountOfDamage);
 
-    public delegate void SpawnTanksIn(int NumberToSpawn);
+    public delegate void SpawnMinesIn(int NumberToSpawn);
     public delegate void OnTanksSpawned(List<GameObject> allTanksSpawnedIn);
 
     public delegate void ResetGame();
@@ -32,7 +32,7 @@ public static class TankGameEvents
     /// <summary>
     /// Called when the tanks should be spawned in
     /// </summary>
-    public static SpawnTanksIn SpawnTanksEvent;
+    public static SpawnMinesIn SpawnTanksEvent;
 
     /// <summary>
     /// Called after the tanks have been spawned in

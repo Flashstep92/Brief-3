@@ -132,7 +132,7 @@ public class TankGameManager : MonoBehaviour
     private void ResetRound()
     {
         TankGameEvents.OnRoundResetEvent?.Invoke();
-        TankGameEvents.SpawnTanksEvent(2); // might want to do different things between tank spawed and game started
+        TankGameEvents.SpawnTanksEvent(10); // might want to do different things between tank spawed and game started
         Invoke("BeginRound", 2);
     }
 
@@ -150,7 +150,7 @@ public class TankGameManager : MonoBehaviour
     {
         TankGameEvents.OnResetGameEvent?.Invoke(); // invoke our resetGameEvent
         TankGameEvents.OnPreGameEvent?.Invoke(); // call our pregame event
-        TankGameEvents.SpawnTanksEvent(2); // might want to do different things between tank spawed and game started
+        TankGameEvents.SpawnTanksEvent(10); // might want to do different things between tank spawed and game started
         yield return new WaitForSeconds(preGameWaitTime);      
         TankGameEvents.OnGameStartedEvent?.Invoke(); // start our game up
 
