@@ -4,42 +4,44 @@ using UnityEngine;
 
 public class Mines : MonoBehaviour
 {
-
+    private bool triggered;
+    private Rigidbody rigid;
+    public GameObject explosion;
+    private void Start()
+    {
+        rigid = GetComponent<Rigidbody>();
+        explosion.SetActive(false);
+    }
     private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        
+        if(triggered == false)
+        {
+            TriggerMine();
+            triggered = true;
+           
+            Debug.Log("Has Entered the mine trigger zone Trigger");
+            //checks to see if the object in the trigger zone has a rigid body.
+            if (other.GetComponent<Rigidbody>())
+            {
+                //if it does, add force on the y axis to move the object up 
+                other.GetComponent<Rigidbody>().AddForce(Vector3.up * 300);
+                TankGameEvents.OnObjectTakeDamageEvent(other.transform, -20.0f);
+            }
+        }
+        Destroy(gameObject);
     }
 
     /// <summary>
     /// Activates the mine when tanks enter trigerzone
     /// 
     /// </summary>
-    public void ActivateMineOnTrigger()
+    public void TriggerMine()
     {
-       // mine should shoot up and deal damage.
+        explosion.SetActive(true);
+        rigid.transform.position += Vector3.up;
+        //mine should shoot up and deal damage.
     }
-
-
-    /// <summary>
-    /// handles the amount of damage 
-    /// </summary>
-    /// <param name="amountOfDamage"></param>
-    /// <returns></returns>
-    public float DealMineDamage(float amountOfDamage)
-    {
-        return amountOfDamage;
-    }
-
+   
 
 
 

@@ -2425,7 +2425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602423423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.6, y: -0.29, z: -27.1}
+  m_LocalPosition: {x: 16.6, y: -0.29, z: -21.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1257465813}
@@ -3382,7 +3382,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 02ead1494a9bc6543b4742a71b0dabd4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.78
+      value: 21.56
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 02ead1494a9bc6543b4742a71b0dabd4,
         type: 3}
@@ -3392,7 +3392,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 02ead1494a9bc6543b4742a71b0dabd4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -26.52
+      value: -22.71
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 02ead1494a9bc6543b4742a71b0dabd4,
         type: 3}
@@ -3438,6 +3438,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2.0945
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 02ead1494a9bc6543b4742a71b0dabd4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6803
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 02ead1494a9bc6543b4742a71b0dabd4,
         type: 3}
@@ -4714,8 +4719,8 @@ MonoBehaviour:
   - {fileID: 1074713862}
   - {fileID: 1171670836}
   - {fileID: 2068936397}
-  - {fileID: 1798815928}
   - {fileID: 1482430057}
+  - {fileID: 1798815928}
   - {fileID: 761777199}
   - {fileID: 1941172233}
   - {fileID: 602423424}
@@ -4724,17 +4729,17 @@ MonoBehaviour:
   - {fileID: 1852371909}
   - {fileID: 90491305}
   - {fileID: 595319089}
-  - {fileID: 595319089}
-  - {fileID: 595319089}
-  - {fileID: 595319089}
-  - {fileID: 595319089}
-  - {fileID: 595319089}
-  - {fileID: 595319089}
-  - {fileID: 595319089}
-  - {fileID: 595319089}
-  - {fileID: 595319089}
-  - {fileID: 595319089}
-  tankPrefabs:
+  - {fileID: 1088180780}
+  - {fileID: 1865102152}
+  - {fileID: 775080382}
+  - {fileID: 1430529175}
+  - {fileID: 1743303023}
+  - {fileID: 1626041846}
+  - {fileID: 1200969045}
+  - {fileID: 648939139}
+  - {fileID: 1526955375}
+  - {fileID: 1660558677}
+  minePrefabs:
   - {fileID: 8057569353055194319, guid: 2366e81719e119f40b959c2cf435681e, type: 3}
   - {fileID: 8057569353055194319, guid: 2366e81719e119f40b959c2cf435681e, type: 3}
   - {fileID: 8057569353055194319, guid: 2366e81719e119f40b959c2cf435681e, type: 3}

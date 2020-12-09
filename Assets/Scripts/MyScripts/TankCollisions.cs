@@ -6,19 +6,15 @@ public class TankCollisions : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)
     {
-        
+       // if (other) 
+        {
+            //if it does, add force on the y axis to move the object up 
+            TankGameEvents.OnObjectTakeDamageEvent(transform, -20.0f);
+            TankGameEvents.OnObjectTakeDamageEvent(other.transform, -20.0f);
+        }
     }
 
-    private void OnCollisionExit(Collision other)
-    {
-        
-    }
-
-    private void OnCollisionStay(Collision other)
-    {
-        
-    }
-
+   
     /// <summary>
     /// checks to see if a collision has occured 
     /// </summary>

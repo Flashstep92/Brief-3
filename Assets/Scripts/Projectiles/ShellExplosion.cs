@@ -21,7 +21,7 @@ public class ShellExplosion : MonoBehaviour
             // ignore it
             return;
         }
-        else
+        else if(other.tag != "Unhittable")
         {
             Boom(); // we hit something go boom
         }

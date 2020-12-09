@@ -7,8 +7,8 @@ public class TankSpawnManager : MonoBehaviour
 {
     public List<Transform> allPossibleSpawnPoints = new List<Transform>(); // this a list of all the possible tank spawn locations
     private List<Transform> startingAllPossibleSpawnPoints = new List<Transform>();// storing the starting value of all possible spawn points
-    public List<GameObject> tankPrefabs = new List<GameObject>(); // a list of all the possible tank prefabs
-    private List<GameObject> allTanksSpawnedIn = new List<GameObject>(); // a list of all the tanks spawned in
+    public List<GameObject> minePrefabs = new List<GameObject>(); // a list of all the possible tank prefabs
+    private List<GameObject> allMinesSpawnedIn = new List<GameObject>(); // a list of all the tanks spawned in
 
     private void OnEnable()
     {
@@ -42,11 +42,11 @@ public class TankSpawnManager : MonoBehaviour
     /// </summary>
     private void Reset()
     {
-        for (int i = 0; i < allTanksSpawnedIn.Count; i++)
+        for (int i = 0; i < allMinesSpawnedIn.Count; i++)
         {
-            Destroy(allTanksSpawnedIn[i]);// destroy each tank we spawned in
+            Destroy(allMinesSpawnedIn[i]);// destroy each tank we spawned in
         }
-        allTanksSpawnedIn.Clear(); // clear the list so we can start fresh
+        allMinesSpawnedIn.Clear(); // clear the list so we can start fresh
         startingAllPossibleSpawnPoints.Clear(); // clear our starting spawn points
         // get a new copy of all the possible spawn points
         for (int i = 0; i < allPossibleSpawnPoints.Count; i++)
@@ -57,7 +57,7 @@ public class TankSpawnManager : MonoBehaviour
 
     private void SpawnTanks(int NumberToSpawn)
     {
-        if (tankPrefabs.Count >= NumberToSpawn && allPossibleSpawnPoints.Count >= NumberToSpawn)
+        if (minePrefabs.Count >= NumberToSpawn && allPossibleSpawnPoints.Count >= NumberToSpawn)
         {
             // we good to go
             for (int i = 0; i < NumberToSpawn; i++)
@@ -65,9 +65,9 @@ public class TankSpawnManager : MonoBehaviour
                 // checking if I have enough unique prefabs so I can spawn different tanks
                 // spawn in a tank prefab, at a random spawn point
                 Transform tempSpawnPoint = startingAllPossibleSpawnPoints[Random.Range(0, startingAllPossibleSpawnPoints.Count)]; // getting a random spawn point
-                GameObject clone = Instantiate(tankPrefabs[i], tempSpawnPoint.position, tankPrefabs[i].transform.rotation);
+                GameObject clone = Instantiate(minePrefabs[i], tempSpawnPoint.position, minePrefabs[i].transform.rotation);
                 startingAllPossibleSpawnPoints.Remove(tempSpawnPoint); // remove the temp spawn point from our possible spawn point list
-                allTanksSpawnedIn.Add(clone); // keep track of the tank we just spawned in
+                allMinesSpawnedIn.Add(clone); // keep track of the tank we just spawned in
             }
         }
         else
@@ -75,6 +75,6 @@ public class TankSpawnManager : MonoBehaviour
             Debug.LogError("Number of tanks to spawn is less than either the number of spawn points, or the number tank prefabs");
         }
 
-        TankGameEvents.OnTanksSpawnedEvent?.Invoke(allTanksSpawnedIn); // tell the game that our tanks have been spawned in!
+        TankGameEvents.OnTanksSpawnedEvent?.Invoke(allMinesSpawnedIn); // tell the game that our tanks have been spawned in!
     }
 }
