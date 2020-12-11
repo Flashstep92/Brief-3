@@ -10,36 +10,38 @@ public class Mines : MonoBehaviour
     private void Start()
     {
         rigid = GetComponent<Rigidbody>();
+        
         explosion.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
         if(triggered == false)
-        {
-            TriggerMine();
-            triggered = true;
-           
-            Debug.Log("Has Entered the mine trigger zone Trigger");
-            //checks to see if the object in the trigger zone has a rigid body.
-            if (other.GetComponent<Rigidbody>())
+        {                      
+            if(other.tag == "tank")//checks to see if the object in the trigger zone is tagged as tank.
             {
-                //if it does, add force on the y axis to move the object up 
-                other.GetComponent<Rigidbody>().AddForce(Vector3.up * 300);
-                TankGameEvents.OnObjectTakeDamageEvent(other.transform, -20.0f);
+                TriggerMine();
+                triggered = true;
+                Debug.Log("Tank Has Entered the mine trigger zone");//logs out the message when the tank has entered the trigger zone.              
+                other.GetComponent<Rigidbody>().AddForce(Vector3.up * 300); //gets the rigid body of the other object and adds force on the 'Y' axis 
+                TankGameEvents.OnObjectTakeDamageEvent(other.transform, -20.0f); //calls the on take damage event and deals damage using the health function in nathans scripts.               
+            }
+            else
+            {
+                Debug.LogError("something else is Activating this trigger" + other.transform.name.ToString());
             }
         }
-        Destroy(gameObject);
+        
     }
 
     /// <summary>
     /// Activates the mine when tanks enter trigerzone
-    /// 
+    /// pops up the mine & plays the particle effect
     /// </summary>
     public void TriggerMine()
     {
         explosion.SetActive(true);
         rigid.transform.position += Vector3.up;
-        //mine should shoot up and deal damage.
+        Destroy(gameObject, 3);
     }
    
 

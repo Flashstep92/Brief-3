@@ -4,25 +4,18 @@ using UnityEngine;
 
 public class TankCollisions : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision collision)
     {
-       // if (other) 
-        {
-            //if it does, add force on the y axis to move the object up 
-            TankGameEvents.OnObjectTakeDamageEvent(transform, -20.0f);
-            TankGameEvents.OnObjectTakeDamageEvent(other.transform, -20.0f);
-        }
+      
+        
+         TankGameEvents.OnObjectTakeDamageEvent?.Invoke(transform, -5.0f);
+         Debug.LogWarning("Tank has crashed into " + transform.name.ToString());
+        
     }
 
-   
-    /// <summary>
-    /// checks to see if a collision has occured 
-    /// </summary>
-    public void CheckCollision()
-    {
 
-    }
 
+    
     
 
 }
