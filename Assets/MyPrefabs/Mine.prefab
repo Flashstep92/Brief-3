@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8875449306540321611}
   m_Layer: 0
   m_Name: Mine
-  m_TagString: Unhittable
+  m_TagString: Mine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f5052849a8e0adf4d813565a73fc6c0e, type: 2}
+  - {fileID: 2100000, guid: 06facc16ecd60ba4081d8a8ffb74221c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -203,6 +203,16 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2089857826534781915, guid: 53c067baf864f974cba283708f292781,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 06facc16ecd60ba4081d8a8ffb74221c, type: 2}
+    - target: {fileID: 2089857826534781915, guid: 53c067baf864f974cba283708f292781,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 06facc16ecd60ba4081d8a8ffb74221c, type: 2}
     - target: {fileID: 2089857826534832711, guid: 53c067baf864f974cba283708f292781,
         type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState

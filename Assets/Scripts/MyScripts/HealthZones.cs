@@ -18,7 +18,7 @@ public class HealthZones : MonoBehaviour
             tanks.Add(other.transform);          
             Debug.Log("Has Entered the mine trigger zone Trigger");               
         }
-        else
+        else if (other.tag != "Quicksand" || other.tag != "Mine" || other.tag != "UnInteractable")
         {
             Debug.LogWarning("something else is Activating this trigger" + other.transform.name.ToString());
         }
