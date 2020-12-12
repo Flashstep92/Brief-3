@@ -25,9 +25,12 @@ public class Mines : MonoBehaviour
                 other.GetComponent<Rigidbody>().AddForce(Vector3.up * 300); //gets the rigid body of the other object and adds force on the 'Y' axis 
                 TankGameEvents.OnObjectTakeDamageEvent(other.transform, -20.0f); //calls the on take damage event and deals damage using the health function in nathans scripts.               
             }
+            // i have left Quicksand out on purpose in this statement to show that below code works.
+            //checks to see if the object colliding with ther mines trigger zone has one of these tags
             else if(other.tag != "Quicksand" && other.tag != "HealingZone" && other.tag != "UnInteractable")
             {
-                Debug.LogError("something else is Activating this trigger" + " " + other.transform.name.ToString());
+                //if the object does not have one of the above tags then debug log the below 
+                Debug.LogWarning("something else is Activating this trigger" + " " + other.transform.name.ToString());
             }
         }
         
