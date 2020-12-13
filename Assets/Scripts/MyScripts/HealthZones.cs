@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class HealthZones : MonoBehaviour
 {
-    public List<Transform> tanks = new List<Transform>();
+    public List<Transform> tanks = new List<Transform>();// list of the tank transforms 
+
     /// <summary>
     /// check to see if the object entering has the tag "tank".
     /// if it dose, heal it for five health
@@ -16,9 +17,9 @@ public class HealthZones : MonoBehaviour
         if(other.tag == "tank")
         {
             tanks.Add(other.transform);          
-            Debug.Log("Has Entered the mine trigger zone Trigger");               
+            Debug.LogWarning("the tank has Entered the healing zone");               
         }
-        else if (other.tag != "Quicksand" && other.tag != "Mine" && other.tag != "UnInteractable")
+        else if(other.tag != "Quicksand" && other.tag != "Mine" && other.tag != "UnInteractable")
         {
             Debug.LogWarning("something else is Activating this trigger" + other.transform.name.ToString());
         }
