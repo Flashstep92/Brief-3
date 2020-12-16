@@ -20,6 +20,7 @@ public class Tank : MonoBehaviour
 
     private void OnEnable()
     {
+        QuickSand.QuickSandEvent.AddListener(AdjustTankSpeed);//my quicksand event, added to on enable
         TankGameEvents.OnObjectDestroyedEvent += Dead; // add dead function to the event for when a tank is destroyed
         TankGameEvents.OnObjectTakeDamageEvent += TankTakenDamage; // assign our health function to our event so we can take damage
         TankGameEvents.OnGameStartedEvent += EnableInput; // assign our tank movement function to the game started event
@@ -27,9 +28,26 @@ public class Tank : MonoBehaviour
 
     private void OnDisable()
     {
+        QuickSand.QuickSandEvent.RemoveListener(AdjustTankSpeed);//my quicksand event added to on disable
         TankGameEvents.OnObjectDestroyedEvent -= Dead; // add dead function to the event for when a tank is destroyed
         TankGameEvents.OnObjectTakeDamageEvent -= TankTakenDamage; // assign our health function to our event so we can take damage
         TankGameEvents.OnGameStartedEvent -= EnableInput; // assign our tank movement function to the game started event
+    }
+
+   /// <summary>
+   /// new function to handle the speed adjustments of tanks in scene
+   /// takes in the parameters of speed & an instance of a transform
+   /// </summary>
+   /// <param name="Speed"></param>
+   /// <param name="tankTransform"></param>
+    private void AdjustTankSpeed(int Speed,Transform tankTransform)
+    {
+        //check to see if the tanks transform is equal to this instance of the script 
+        if(tankTransform == transform)
+        {
+            tankMovement.speed = Speed;//sets the tankMovement.speed to equal the parameter of this function "Speed" 
+            Debug.LogWarning("The tank's Speed has Changed!");//logs out a warning the the speed of the tank has been changed.
+        }       
     }
 
     // Start is called before the first frame update

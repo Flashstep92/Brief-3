@@ -9,6 +9,7 @@ TagManager:
   - UnInteractable
   - Mine
   - Quicksand
+  - Ground
   layers:
   - Default
   - TransparentFX

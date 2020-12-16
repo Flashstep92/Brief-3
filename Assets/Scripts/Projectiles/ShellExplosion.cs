@@ -21,7 +21,8 @@ public class ShellExplosion : MonoBehaviour
             // ignore it
             return;
         }
-        else if(other.tag != "UnInteractable" && other.tag != "HealingZone" && other.tag != "Mine" && other.tag != "Quicksane")
+        //check the tags to ensure that the function called below does not activate if it interacts with any of these tags. 
+        else if(other.tag != "UnInteractable" && other.tag != "HealingZone" && other.tag != "Mine" && other.tag != "Quicksand")
         {
             Boom(); // we hit something go boom
         }
