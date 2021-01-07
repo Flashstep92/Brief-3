@@ -33,7 +33,7 @@ public class HealthZones : MonoBehaviour
         //goes through the list of tanks then iterates i, this will happen every fram as its inside the update function.
         for (int i = 0; i < tanks.Count; i++)
         {
-            /*at the position of i in the list of tank transforms
+            /* at the position of i in the list of tank transforms
              * Invokes the on object take damage event with a short hand if statement
              * passes in positive float and multiplies this by the Delta time
              * as this is in the update functions and called every frame it creates a heal over time effect.
